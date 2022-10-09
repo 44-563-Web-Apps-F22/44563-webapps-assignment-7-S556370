@@ -14,6 +14,27 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
         crossorigin="anonymous"></script>
     <script>
+        var ids = new Array(25);
+        var chestCount=0;
+        var score =0;
+        var lastCheck=12;
+        var treasureLocation=18;
+        function check(position){
+            let currentSearchElement = document.getElementById(position);
+            if(position==treasureLocation){
+                currentSearchElement.src="treasure.jpg";
+                chestCount++;
+                score++;
+                lastCheck=position;
+                document.getElementById("chests").innerText = " "+chestCount;
+                document.getElementById("score").innerText = " "+score;
+            } else{
+                currentSearchElement.src="empty treasure chest.jpg"
+                chestCount++;
+                document.getElementById("chests").innerText = " "+chestCount;
+            }
+
+        }
     </script>
     <style>
         .basic-styling {
@@ -43,104 +64,104 @@
     <h1 class="basic-styling">
         Treasure hunt by Murali Krishna, Sundari.
     </h1><br>
-    <div style="font-size: xx-large; margin-top:10px; margin-left:30px;margin-bottom: 10px; col-sm mb-4or: black; font-weight: 700;">
+    <div style="font-size: xx-large; margin-top:10px; margin-left:30px;margin-bottom: 10px; color: black; font-weight: 700;">
         <marquee scrollamount="20"> Click on the chests to search for treasure.</marquee>
     </div>
     <div class="flex-container">        
-        <div  id="chests">
-            Number of chests checked is zero
+        <div  id="div-chests">            
+            Number of chests checked is : <span id="chests"> zero </span>
         </div>
-        <div  id="score">
-            Score is unknown
+        <div  id="div-score">
+            Score is : <span id="score"> unknown </span> 
         </div>
-        <div  id="help">
+        <div  id="div-help">
             Help report
         </div>
     </div>
     <div class="container" style="margin-top: 100px; margin-left: 200px;">
         <div class="row">
           <div class="col-sm mb-4">
-              <img id="r1c1" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="0" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(0)">
           </div>
           <div class="col-sm mb-4">
-            <img id="r1c2" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+            <img id="1" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(1)">
         </div>
         <div class="col-sm mb-4">
-            <img id="r1c3" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+            <img id="2" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(2)">
         </div>
         <div class="col-sm mb-4">
-            <img id="r1c4" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+            <img id="3" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(3)">
         </div>
         <div class="col-sm mb-4">
-            <img id="r1c5" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+            <img id="4" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(4)">
         </div>
       </div>
         <div class="row">
           <div class="col-sm mb-4">
-              <img id="r2c1" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="5" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(5)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r2c2" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="6" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(6)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r2c3" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="7" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(7)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r2c4" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="8" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(8)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r2c5" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="9" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(9)">
           </div>
           </div>
         <div class="row">
           <div class="col-sm mb-4">
-              <img id="r3c1" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="10" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(10)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r3c2" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="11" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(11)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r3c3" src="help.jpg" alt="Help" style="width: 80px;height:80px">
+              <img id="12" src="help.jpg" alt="Help" style="width: 80px;height:80px" onclick="help()">
           </div>
           <div class="col-sm mb-4">
-              <img id="r3c4" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="13" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(13)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r3c5" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="14" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(14)">
           </div>
         </div>
         <div class="row">
           <div class="col-sm mb-4">
-              <img id="r4c1" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="15" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(15)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r4c2" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="16" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(16)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r4c3" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="17" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(17)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r4c4" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="18" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(18)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r4c5" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="19" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(19)">
           </div>
         </div>
         <div class="row">
           <div class="col-sm mb-4">
-              <img id="r5c1" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="20" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(20)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r5c2" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="21" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(21)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r5c3" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="22" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(22)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r5c4" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="23" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(23)">
           </div>
           <div class="col-sm mb-4">
-              <img id="r5c5" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px">
+              <img id="24" src="closed treasure chest.jpg" alt="closed treasure chest" style="width: 80px;height:80px" onclick="check(24)">
           </div>
         </div>
         </div>
