@@ -51,16 +51,16 @@
                 setTimeout(() => {
                     document.getElementById('countdown').innerHTML = i;
                 }, (3 - i) * 3000);
-               
+
             }
             setTimeout(() => {
-                    if (myTime == undefined) {
-                        document.getElementById('target').innerHTML = "Too Slow";
-                    } else {
-                        var buttonTime = Date.now();
-                        document.getElementById('target').innerHTML = "Time was " + (buttonTime - myTime);
-                    }
-                }, 3000);
+                if (myTime == undefined) {
+                    document.getElementById('target').innerHTML = "Too Slow";
+                } else {
+                    var buttonTime = Date.now();
+                    document.getElementById('target').innerHTML = "Time was " + (buttonTime - myTime);
+                }
+            }, 3000);
 
         }
     </script>
