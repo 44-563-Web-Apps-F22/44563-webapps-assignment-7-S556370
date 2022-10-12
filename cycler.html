@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+</style></head>
+
+
+
+<body>
+    <h1>Murali Krishna, Sundari - builds a cycler</h1>
+		<div class="flex-container" id="target">
+		  <div class="cycler">row item 1</div>   
+		  <div class="cycler">row item 2</div>  
+		  <div class="cycler">row item 3</div>  
+		</div>
+
+    
+	
+	<p style="font-size:30px;"> Enter the value in following textbox, and Press the button to create an new element of type div with entered value as its content 
+        which then adds to the container.</p>
+		<input type="text" id="divContent" name="divContent"></input> <button onclick="makeNewDiv()">Add value</button>
+	
+	
+</body>
+<script>
+	function makeNewDiv(){
+        let divContent = document.getElementById("divContent").value;
+		/* make the div and its text */        
+		let element = document.createElement("div");
+        element.innerHTML = divContent;
+        element.setAttribute('class','cycler');
+		element.style.color = 'green';
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.appendChild(element)
+		
+	}
+</script>
+</html>	
