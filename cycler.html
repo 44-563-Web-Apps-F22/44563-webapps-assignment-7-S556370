@@ -39,9 +39,15 @@
 <body>
     <h1>Murali Krishna, Sundari - builds a cycler</h1>
     <div class="flex-container" id="target">
-        <div class="cycler">row item 1</div>
-        <div class="cycler">row item 2</div>
-        <div class="cycler">row item 3</div>
+        <div class="cycler">1</div>
+        <div class="cycler">2</div>
+        <div class="cycler">3</div>
+        <div class="cycler">4</div>
+        <div class="cycler">5</div>
+        <div class="cycler">6</div>
+        <div class="cycler">7</div>
+        <div class="cycler">8</div>
+        <div class="cycler">9</div>
     </div>
     <div class="container" style="margin-top:30px;margin-left: 60px;">
         <p style="font-size:30px;">Enter the value in following textbox, and Press the button to create an new element
@@ -52,6 +58,8 @@
         <button class="btn btn-primary" style="margin-top: 30px; margin-right: 10px;" id="getButton"
             onclick="get()">Get</button>
         <button class="btn btn-primary" style="margin-top: 30px;" id="spinButton" onclick="spin()">Spin</button>
+        <button class="btn btn-primary" style="margin-top: 30px; margin-left: 30px;" id="spinButton"
+            onclick="swap()">Swap</button>
     </div>
 </body>
 <script>
@@ -81,6 +89,40 @@
             let container = document.getElementById('target');
             container.insertBefore(removedItem, container.children[0]);
         }
+    }
+    function swap() {
+        var cyclerItems = document.getElementsByClassName("cycler");
+        if (cyclerItems.length > 2) {
+
+            let random = getRandomMaxExclusive(2, cyclerItems.length - 1).split("/");
+            let rand1 = random[0];
+            let rand2 = random[1];
+            // console.log(rand1 + " " + rand2);
+
+            let swapElement1 = cyclerItems[rand1];
+            let swapElement2 = cyclerItems[rand2];
+
+            let dummy = document.createElement("span");
+            swapElement1.before(dummy);
+            swapElement2.before(swapElement1);
+            dummy.replaceWith(swapElement2);
+
+        }
+
+    }
+    function getRandomMaxExclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        randomNumber1 = Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+        randomNumber2 = Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+        if (randomNumber1 > randomNumber2) {
+            temp = randomNumber1;
+            randomNumber1 = randomNumber2;
+            randomNumber2 = temp;
+        } else if (randomNumber1 == randomNumber2) {
+            getRandomIntInclusive(min, max);
+        }
+        return randomNumber1 + "/" + randomNumber2;
     }
 </script>
 
