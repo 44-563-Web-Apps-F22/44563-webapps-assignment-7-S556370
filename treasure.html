@@ -81,7 +81,7 @@
             document.getElementById("chests").innerText = " " + chestCount;
             document.getElementById("score").innerText = " " + score;
             var basicTeasureBoxes = document.getElementsByClassName("basicTeasureBoxes");
-            for(let i=0;i<basicTeasureBoxes.length;i++){
+            for(let i=0;i<=basicTeasureBoxes.length;i++){
                 if(i==12)
                 continue;
                 basicTeasureBoxes[i].src="closed treasure chest.jpg" ;
